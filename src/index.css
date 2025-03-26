@@ -16,6 +16,19 @@
 .default-paragraph {
   @apply text-primary-white-50 text-base font-medium font-montserrat font-normal;
 }
+.custom-text-style {
+  @apply text-primary-navy text-[12px] font-montserrat font-normal leading-[150%] tracking-[-0.01em];
+}
+
+.rtl {
+  direction: rtl;
+  text-align: right;
+}
+
+.ltr {
+  direction: ltr;
+  text-align: left;
+}
 
 
 .swiper {

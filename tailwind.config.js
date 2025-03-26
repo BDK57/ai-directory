@@ -24,7 +24,8 @@ export default {
         'primary-white-50': '#FFFFFF80',
         'primary-yellow': '#FFB414',
         'primary-purple':'#9747FF',
-        'pills-color':'#252343'
+        'pills-color':'#252343',
+        'primary-navy': "#24223A"
       }
     },
     container: {
