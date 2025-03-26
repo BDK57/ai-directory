@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* body {
+  background-color: #090810;
+} */
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("/fonts/ClashDisplay-Variable.ttf") format("truetype");
+}
+
+.sub-heading {
+  @apply text-primary-white text-[40px] leading-[40px] tracking-[-3] font-clash-display font-semibold;
+}
+.default-paragraph {
+  @apply text-primary-white-50 text-base font-medium font-montserrat font-normal;
+}
+
+
+.swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+  }
+
+  /* Navigation buttons */
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: #FFFFFF !important;
+  }
+
+  /* Pagination bullets */
+  .swiper-pagination-bullet {
+    opacity: 0.5;
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    background: #9747FF !important;
+    border: none !important;
+    opacity: 0.5;
+  }
+
+  .mySwiper .swiper-pagination{
+    bottom: -8px !important;
+
+  }
+.swiper-pagination-bullet{
+    background: transparent !important;
+    border: 2px solid #ffffff38 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+  }
+
+  .mySwiper .swiper-pagination-bullet{
+    width: 15px;
+    height: 15px;
+  }
