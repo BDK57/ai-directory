@@ -34,7 +34,7 @@ const articles = [
 
 const Articles = () => {
   return (
-    <section className=" bg-primary-black text-white   relative">
+    <section style={{paddingBottom:"150px"}} className=" bg-primary-black text-white  h-full  relative">
       <div className="container flex flex-col items-center text-center border-x border-x-primary-white-20 py-12">
         <div className="absolute w-[54vw] h-[610px] left-[-219px] -bottom-10 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px]"></div>
         <div className="flex justify-between items-center w-full z-20" >
@@ -71,7 +71,7 @@ const Articles = () => {
       </div>
 
       {/* Right side - List of Articles */}
-      <div className="flex-1 flex flex-col gap-6">
+      <div className="flex-1 flex flex-col gap-6 ">
         {articles.map((article, index) => (
           <ArticleCard key={index} {...article} />
         ))}

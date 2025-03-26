@@ -18,6 +18,7 @@ import Button from '../button/largeButton'
 import { Avatar, AvatarGroup } from '@heroui/avatar'
 import { useTranslation } from 'react-i18next'
 import CustomButtonWithIcon from '../button/largeButton'
+import { useNavigate } from 'react-router-dom'
 
 
 const tabs = ["Trending", "Top Discussions", "Latest"];
@@ -88,7 +89,7 @@ const data = {
 
 const menuItems = ["ENTERTAINMENT", "TRAVEL", "WRITING", "SEARCH", "PROGRAMMING"];
 export default function AISection() {
-  
+  const navigate = useNavigate()
     const [activeTab, setActiveTab] = useState("Trending");
     const [activeIndextab, setActiveIndextab] = useState(2);
     const logos = [
@@ -127,7 +128,7 @@ export default function AISection() {
       const { t, i18n } = useTranslation();
     return (
         <>
-      <section className="relative bg-primary-black text-white px-8 md:px-16">
+      <section className="relative bg-primary-black text-white ">
       <div className="border absolute border-primary-white-20 right-0 w-full top-0  z-20"/>
       <div className="absolute w-[498px] h-[200px] left-1/2 -translate-x-1/2 top-0 bg-[#4A4588] blur-[137px] rounded-full"></div>
       <div className="absolute w-[710px] h-[60vh] left-[-219px] bottom-0 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px] z-10"></div>
@@ -142,13 +143,13 @@ export default function AISection() {
         </div>
   
         {/* AI Tool Logos */}
-        <div className="flex justify-between w-full items-center gap-6 mt-8 opacity-80 z-20 px-20">
+        <div className="flex justify-between w-full items-center gap-6 mt-8 opacity-80 z-20 ">
   {logos.map((logo, index) => (
     <img key={index} src={logo.src} alt={logo.alt}  className=" min-w-[147.33px] object-contain" />
   ))}
 </div>
 
-<div className="text-white mt-16 flex justify-between items-center px-16">
+<div className="text-white mt-16 flex justify-between items-center ">
   {/* Title */}
   <div className='z-20'>
   <h2 className="sub-heading ">
@@ -165,14 +166,14 @@ export default function AISection() {
 
   {/* Button */}
   <div className="mt-6">
-    <CustomButtonWithIcon text={"Explore More"} />
+    <CustomButtonWithIcon text={"Explore More"}  onClick={()=> navigate("/directory")}/>
   </div>
 </div>
 
   
         {/* Main Content */}
         
-        <div className="grid md:grid-cols-4 gap-12 mt-12 relative z-20 px-16">
+        <div className="grid md:grid-cols-4 gap-12 mt-12 relative z-20 ps-16">
       {/* Sidebar Navigation */}
       <div className="col-span-1 z-20">
       <ul className="space-y-3 text-lg z-20 mt-16">
@@ -492,7 +493,7 @@ export default function AISection() {
         ))}
       </div>
     </div>
- <div className='flex justify-center z-20'>
+ <div className='flex justify-center mt-20 z-20'>
  <CustomButtonWithIcon text={"Join Our Thriving Community"}  />
 </div>
 </div>

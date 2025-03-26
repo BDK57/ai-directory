@@ -32,7 +32,7 @@ export default function Header() {
               className="w-[121px]"
             />
           </div>
-          <div className="flex space-x-[30px]">
+          <div className="flex space-x-[30px] items-center">
           <Button
               className="bg-primary-white text-primary-black font-montserrat"
               size="lg"
