@@ -1,41 +1,11 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Slider from "./common/Slider";
+import React from "react";
+import Slider from "../../../components/common/Slider";
 import { SwiperSlide } from "swiper/react";
-import CardBox from "./common/card-box";
-import SliderOne from "../assets/slider-1.webp";
-const FeatureSection = () => {
-  const [tools, setTools] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  // LANG
-  useEffect(() => {
-    const fetchTools = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          "https://admin.the-expert.ai/api/feature_tools"
-        );
-        setTools(response.data);
-        setError(null);
-      } catch (err) {
-        setError("Failed to fetch tools data");
-        console.error("Error fetching tools:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+import CardBox from "../../../components/common/card-box";
+import SliderOne from "../../../assets/slider-1.webp";
+import sliderBg from "../../../assets/detail-page/bg-slider-section.webp";
+const SliderSection = ({ data, title, description, className }) => {
 
-    fetchTools();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
   const cardSlides = [
     {
       name: "Chat GPT",
@@ -74,16 +44,14 @@ const FeatureSection = () => {
       image: SliderOne,
     },
   ];
-
   return (
-    <div className=" bg-primary-black bg-fade-gradient ">
+    <div
+      className={` bg-primary-black bg-fade-gradient relative z-[1] ${className}`}
+    >
       <div className="container border-x border-x-primary-white-20  pt-12 pb-16">
         <div className="content-bx flex flex-col gap-y-8 items-center">
-          <h2 className="sub-heading ">Featured Tools Section</h2>
-          <p className="default-paragraph ">
-            Handpicked tools that are trending and highly rated by our
-            community.
-          </p>
+          <h2 className="sub-heading ">{title}</h2>
+          <p className="default-paragraph ">{description}</p>
         </div>
         <Slider
           slides={cardSlides}
@@ -98,15 +66,18 @@ const FeatureSection = () => {
           }}
           className="w-[89%] mx-auto mt-12 pb-12"
         >
-          {tools?.data?.map((tool, index) => (
+          {data?.map((tool, index) => (
             <SwiperSlide key={index}>
               <CardBox data={tool} />
             </SwiperSlide>
           ))}
         </Slider>
       </div>
+      <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center z-[-1]">
+        <img src={sliderBg} alt="play" className="w-full h-full object-cover" />
+      </div>
     </div>
   );
 };
 
-export default FeatureSection;
+export default SliderSection;

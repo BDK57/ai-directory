@@ -18,11 +18,13 @@ export default {
       colors: {
         'primary-white': '#FFFFFF',
         'primary-black': '#090810',
+        'primary-black-20': '#121220',
         'primary-white-20': '#FFFFFF33',
         'primary-white-30': '#FFFFFF4D',
         'primary-white-50': '#FFFFFF80',
         'primary-yellow': '#FFB414',
-        'primary-purple':'#9747FF'
+        'primary-purple':'#9747FF',
+        'pills-color':'#252343'
       }
     },
     container: {
@@ -33,7 +35,7 @@ export default {
         md: '768px',
         lg: '1024px',
         xl: '1320px', // Set maximum width to 1090px
-        '2xl': '1320px' // Also set 2xl to 1090px to ensure it doesn't go larger
+        '2xl': '1536px' // Also set 2xl to 1090px to ensure it doesn't go larger
       },
     },
   },

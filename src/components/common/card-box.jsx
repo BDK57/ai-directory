@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const CardBox = ({ img, className }) => {
+const CardBox = ({ data, className }) => {
+  console.log(data, "tools");
   return (
     <div className={`flex items-center justify-center ${className}`}>
       <div className="bg-[#1C1A32] p-3 rounded-2xl  relative overflow-hidden border border-primary-white-20">
@@ -9,7 +11,7 @@ const CardBox = ({ img, className }) => {
         </div>
         <div className="flex justify-center mb-6 relative">
           <img
-            src={img}
+            src={`${import.meta.env.VITE_SITE_URL}${data?.image}`}
             alt="ChatGPT logo"
             className="w-full h-full object-cover rounded-2xl"
           />
@@ -49,7 +51,7 @@ const CardBox = ({ img, className }) => {
         </div>
         <div className="flex w-full justify-between">
           <h2 className="text-[#EFEEF6] font-clash-display text-2xl font-semibold mb-2">
-            ChatGPT
+            {data?.name || data?.title}
           </h2>
           <div className="bg-[#252343] text-white text-sm font-montserrat font-normal tracking-[-0.01em] px-3 py-[6px] rounded-full inline-block mb-4">
             Writing
@@ -61,12 +63,18 @@ const CardBox = ({ img, className }) => {
           through artificial intelligence, such as converting text into an image
         </p>
         <div className="flex items-center">
-          <a
-            href="#"
+          {data?.is_featured == 1  ? <Link
+            to={`${data?.is_featured != 1 ? `/directory/${data?.id}` : `#`}`}
             className="text-primary-white text-base font-montserrat font-medium tracking-[-0.01em] flex items-center underline"
           >
             Learn More <i className="fas fa-arrow-right ml-2"></i>
-          </a>
+          </Link> : <p
+
+            className="text-primary-white text-base font-montserrat font-medium tracking-[-0.01em] flex items-center underline"
+          >
+            Learn More <i className="fas fa-arrow-right ml-2"></i>
+          </p>}
+
           <svg
             width="16"
             height="12"

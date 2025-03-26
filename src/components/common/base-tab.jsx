@@ -1,5 +1,6 @@
 import { Tabs, Tab } from "@heroui/tabs";
 import { useState } from "react";
+import CardBox from "./card-box";
 
 const BaseTab = ({
   items = [],
@@ -52,7 +53,7 @@ const BaseTab = ({
             title={
               <div className="flex items-center gap-2">
                 {item.icon && <span>{item.icon}</span>}
-                <span>{item.title}</span>
+                <span>{item.name}</span>
                 {item.count && (
                   <span className="text-xs bg-primary-white-20 px-2 py-1 rounded-full">
                     {item.count}
@@ -62,7 +63,13 @@ const BaseTab = ({
             }
             disabled={item.disabled}
           >
-            <div className="p-4">{item.content}</div>
+            <div className="p-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 w-full">
+                {item?.aitools.map((tool) => (
+                  <CardBox key={tool.id} data={tool} />
+                ))}
+              </div>
+            </div>
           </Tab>
         ))}
       </Tabs>
