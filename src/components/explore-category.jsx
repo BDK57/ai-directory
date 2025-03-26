@@ -10,6 +10,7 @@ import shadeOne from "../assets/explore-shade-one.svg";
 import shadeTwo from "../assets/explore-shade-two.svg";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Loader from "./common/Loader";
 const ExploreCategory = () => {
   // const tabItems = [
   //   {
@@ -80,7 +81,7 @@ const ExploreCategory = () => {
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loader/>;
   }
 
   if (error) {

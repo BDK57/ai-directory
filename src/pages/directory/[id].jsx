@@ -11,6 +11,7 @@ import Footer from "../../components/Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import Loader from "../../components/common/Loader";
+import Error from "../../components/common/Error";
 const DirectoryDetail = () => {
   const { id } = useParams();
   const [tool, setTool] = useState([]);
@@ -42,7 +43,7 @@ const DirectoryDetail = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error />;
   }
   return (
     <>

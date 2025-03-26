@@ -46,9 +46,9 @@ const SliderSection = ({ data, title, description, className }) => {
   ];
   return (
     <div
-      className={` bg-primary-black bg-fade-gradient relative z-[1] ${className}`}
+      className={` bg-primary-black bg-fade-gradient relative z-[1]`}
     >
-      <div className="container border-x border-x-primary-white-20  pt-12 pb-16">
+      <div className={`container border-x border-x-primary-white-20  pt-12 ${className}`}>
         <div className="content-bx flex flex-col gap-y-8 items-center">
           <h2 className="sub-heading ">{title}</h2>
           <p className="default-paragraph ">{description}</p>

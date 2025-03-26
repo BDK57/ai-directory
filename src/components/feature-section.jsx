@@ -1,41 +1,10 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+
 import Slider from "./common/Slider";
 import { SwiperSlide } from "swiper/react";
 import CardBox from "./common/card-box";
 import SliderOne from "../assets/slider-1.webp";
-const FeatureSection = () => {
-  const [tools, setTools] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-  // LANG
-  useEffect(() => {
-    const fetchTools = async () => {
-      try {
-        setLoading(true);
-        const response = await axios.get(
-          "https://admin.the-expert.ai/api/feature_tools"
-        );
-        setTools(response.data);
-        setError(null);
-      } catch (err) {
-        setError("Failed to fetch tools data");
-        console.error("Error fetching tools:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
+const FeatureSection = ({data}) => {
 
-    fetchTools();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
   const cardSlides = [
     {
       name: "Chat GPT",
@@ -98,7 +67,7 @@ const FeatureSection = () => {
           }}
           className="w-[89%] mx-auto mt-12 pb-12"
         >
-          {tools?.data?.map((tool, index) => (
+          {data?.data?.map((tool, index) => (
             <SwiperSlide key={index}>
               <CardBox data={tool} />
             </SwiperSlide>
