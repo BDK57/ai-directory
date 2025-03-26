@@ -7,6 +7,7 @@ import Footer from "../../components/footer";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Loader from "../../components/common/Loader";
+import Error from "../../components/common/Error";
 const Directory = () => {
   const [tools, setTools] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -37,7 +38,7 @@ const Directory = () => {
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <Error/>;
   }
   return (
     <>
