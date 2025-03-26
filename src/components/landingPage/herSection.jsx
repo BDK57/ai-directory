@@ -36,7 +36,7 @@ const HeroSection = () => {
 
       {/* Hero Content */}
      
-      <div className="grid md:grid-cols-2 items-center h-screen mt-40 h-[83vh]  px-22 relative container border-x border-x-primary-white-20  z-20">
+      <div className="grid md:grid-cols-2 items-center h-screen mt-40 h-[790px]  px-22 relative container border-x border-x-primary-white-20  z-20">
         {/* Left Side - Text */}
         
         <div className="space-y-6 z-20 flex flex-col justify-center">
