@@ -64,7 +64,7 @@ const CardBox = ({ data, className }) => {
         </p>
         <div className="flex items-center">
           {data?.is_featured == 1  ? <Link
-            to={`${data?.is_featured != 1 ? `/directory/${data?.id}` : `#`}`}
+            to={`/directory/${data?.id}`}
             className="text-primary-white text-base font-montserrat font-medium tracking-[-0.01em] flex items-center underline"
           >
             Learn More <i className="fas fa-arrow-right ml-2"></i>
@@ -72,7 +72,7 @@ const CardBox = ({ data, className }) => {
 
             className="text-primary-white text-base font-montserrat font-medium tracking-[-0.01em] flex items-center underline"
           >
-            Learn More <i className="fas fa-arrow-right ml-2"></i>
+            Learn More 2 <i className="fas fa-arrow-right ml-2"></i>
           </p>}
 
           <svg
