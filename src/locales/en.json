@@ -1,0 +1,19 @@
+{
+    "home": {
+      "title": "Your Guide to the",
+      "latestAiTools": "LatestAITOOLS",
+      "description": "Lorem ipsum dolor sit amet consectetur. Id eu ipsum urna sed consectetur aliquam scelerisque. Aliquam mauris ullamcorper sed amet curabitur bibendum eu phasellus ullamcorper. Egestas feugiat malesuada ultricies ac consectetur. Pellentesque commodo luctus varius integer nulla auctor.",
+      "placeholder": "Looking for AI tool can",
+      "aiToolsTitle": "1000+ AI Tools",
+    "aiToolsDescription": "Explore a comprehensive list of AI tools for various applications. From image generation to text processing, find the best AI-powered solutions tailored to your needs."
+    },
+    "about": {
+      "title": "About Us",
+      "content": "We provide the best AI tools for your needs."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "email": "Email us at support@example.com"
+    }
+  }
+  

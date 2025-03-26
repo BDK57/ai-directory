@@ -22,7 +22,8 @@ export default {
         'primary-white-30': '#FFFFFF4D',
         'primary-white-50': '#FFFFFF80',
         'primary-yellow': '#FFB414',
-        'primary-purple':'#9747FF'
+        'primary-purple':'#9747FF',
+        'primary-navy': "#24223A"
       }
     },
     container: {
@@ -33,7 +34,7 @@ export default {
         md: '768px',
         lg: '1024px',
         xl: '1320px', // Set maximum width to 1090px
-        '2xl': '1320px' // Also set 2xl to 1090px to ensure it doesn't go larger
+        '2xl': '1536px' // Also set 2xl to 1090px to ensure it doesn't go larger
       },
     },
   },
