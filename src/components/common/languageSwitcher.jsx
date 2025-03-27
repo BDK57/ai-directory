@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
+import ArabicIcon from '../../assets/icons/ar.svg'
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -36,7 +37,7 @@ const LanguageSwitcher = () => {
             </svg>
             
           ) : (
-            <img src="/arabic.svg" alt="Arabic" className="w-full h-full" />
+            <img src={ArabicIcon} alt="Arabic" className="w-full h-full" />
           )}
         </span>
         <svg width="24" height="12" viewBox="0 0 24 12" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -60,7 +61,7 @@ const LanguageSwitcher = () => {
             English
           </button>
           <button onClick={() => changeLanguage("ar")} className="flex items-center gap-2 p-2 w-full">
-            <img src="/arabic.svg" alt="Arabic" className="w-6 h-6" />
+            <img src={ArabicIcon} alt="Arabic" className="w-6 h-6" />
             العربية
           </button>
         </div>

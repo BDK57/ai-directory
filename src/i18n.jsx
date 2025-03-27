@@ -16,13 +16,13 @@ i18n
       caches: ["localStorage"],
     },
     backend: {
-      loadPath: "../src/locales/{{lng}}.json", // Public folder, not src
+      loadPath: "./locales/{{lng}}.json", // Public folder, not src
     },
   });
 
 // Normalize language to 'en' or 'ar' only
 const normalizeLanguage = (lng) => {
-  const lang = lng.split("-")[0]; // Convert 'en-GB' → 'en'
+  const lang = lng?.split("-")[0]; // Convert 'en-GB' → 'en'
   return lang === "ar" ? "ar" : "en"; // Only allow 'en' or 'ar'
 };
 
