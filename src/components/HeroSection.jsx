@@ -9,19 +9,16 @@ import EditIcon from "../assets/edit-icon.svg";
 const HeroSection = () => {
   return (
     <>
-      <section
-        id="hero"
-        className="border-t border-t-primary-white-20 "
-      >
-        <div className="flex flex-row  gap-y-8 justify-start items-start text-white w-full   mx-auto container relative z-30 border-x border-x-primary-white-20 h-[61.5vh] min-h[586px]">
-          <div className="flex w-full h-full  flex-col justify-center items-start text-white w-4/5">
-            <h1 className="font-clash-display font-semibold  text-start text-4xl md:text-5xl lg:text-5xl xl:text-6xl  -tracking-[3%] leading-tight  w-full xl:w-2/4 2xl:w-11/12">
+      <section id="hero" className="border-t border-t-primary-white-20 ">
+        <div className="flex flex-col lg:flex-row  gap-y-8 justify-start items-start text-white w-full   mx-auto container relative z-30 border-x border-x-primary-white-20 lg:h-[52.5vh] xl:h-[68.5vh] 2xl:h-[61.5vh]  min-h[586px]">
+          <div className="flex w-full h-full  flex-col justify-center items-start text-white w-4/5 pt-10">
+            <h1 className="font-clash-display font-semibold  text-start text-4xl md:text-5xl lg:text-4xl xl:text-6xl  -tracking-[3%] lg:leading-tight leading-snug  w-full xl:w-2/4 2xl:w-11/12">
               Discover the Best
             </h1>
-            <h2 className="font-clash-display font-semibold  text-start text-4xl md:text-5xl lg:text-5xl xl:text-[80px]  -tracking-[3%] !leading-[100px]  w-full text-primary-yellow">
+            <h2 className="font-clash-display font-semibold  text-start text-4xl md:text-5xl lg:text-5xl xl:text-[80px]  -tracking-[3%] lg:!leading-[100px] leading-snug  w-full text-primary-yellow">
               AI Tools for Every Need
             </h2>
-            <p className="w-full xl:w-[50%]  font-[400] text-start text-sm xl:text-base  font-montserrat leading-7 tracking-wide text-primary-white-50 mt-7">
+            <p className="w-full xl:w-[50%]  font-[400] text-start text-sm xl:text-base  font-montserrat leading-7 tracking-wide text-primary-white-50 mt-7 lg:mt-0 xl:mt-7">
               Your one-stop directory for AI tools that transform business,
               education, design, and more.
             </p>
@@ -32,8 +29,8 @@ const HeroSection = () => {
               }
               placeholder="Search for tools"
               className={{
-                base: "w-2/4 max-w-[545px] items-center gap-10 mt-7 ",
-                innerWrapper: "gap-2.5",
+                base: "w-full lg:w-2/4 max-w-[545px] items-center gap-10 mt-7   bg-gradient-to-r from-[#8C292F] to-[#4A4588]    hover:shadow-[0px_14px_29px_2px_rgba(151,71,255,0.2)] p-[2px] overflow-hidden  rounded-medium",
+                innerWrapper: "gap-2.5 ",
                 input: [
                   "bg-[transparent]",
                   "text-black/90 dark:text-white/90",
@@ -54,7 +51,7 @@ const HeroSection = () => {
               variant="bordered"
             />
           </div>
-          <div className="character-img absolute right-0 -top-8">
+          <div className="character-img mx-auto lg:mx-0 lg:absolute  right-0 -top-8">
             <img src={characterImg} alt="Character Image" />
           </div>
         </div>
@@ -72,7 +69,7 @@ const HeroSection = () => {
         <img
           src={shadeThree}
           alt=""
-          className="absolute -bottom-1/3 left-1/2 -translate-x-1/2  -z-[2]"
+          className="absolute -bottom-1/4 lg:-bottom-1/3 left-1/2 -translate-x-1/2  -z-[2]"
         />
       </section>
     </>

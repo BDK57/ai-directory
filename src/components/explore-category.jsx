@@ -91,7 +91,7 @@ const ExploreCategory = () => {
   // Basic usage
 
   return (
-    <div className=" bg-primary-black relative z-[1]">
+    <section className="explore-category bg-primary-black relative z-[1]">
       <div className="container border-x border-x-primary-white-20  py-12 pb-64 ">
         <div className="content-bx flex flex-col gap-y-8 items-center ">
           <h2 className="sub-heading ">Explore by Category</h2>
@@ -125,7 +125,7 @@ const ExploreCategory = () => {
           className="absolute bottom-0 right-0 -z-[2] max-h-[972px]"
         />
       </div>
-    </div>
+    </section>
   );
 };
 

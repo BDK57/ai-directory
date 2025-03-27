@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const CardBox = ({ data, className }) => {
   console.log(data, "tools");
   return (
-    <div className={`flex items-center justify-center ${className}`}>
-      <div className="bg-[#1C1A32] p-3 rounded-2xl  relative overflow-hidden border border-primary-white-20">
+    <div className={`flex items-center justify-center bg-gradient-to-r hover:from-[#8C292F] hover:to-[#4A4588]  from-primary-white-20 to-primary-white-20  hover:shadow-[0px_14px_29px_2px_rgba(151,71,255,0.2)] relative rounded-2xl p-[1px]   ${className}`}>
+      <div className="bg-[#1C1A32] p-3 rounded-2xl  relative  ">
         <div className="absolute top-4 right-4 bg-purple-500 text-white text-xs font-semibold p-2 rounded-full">
           <i className="fas fa-bookmark"></i>
         </div>

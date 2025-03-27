@@ -45,7 +45,7 @@ const FeatureSection = ({data}) => {
   ];
 
   return (
-    <div className=" bg-primary-black bg-fade-gradient ">
+    <section className="feature-section bg-primary-black bg-fade-gradient ">
       <div className="container border-x border-x-primary-white-20  pt-12 pb-16">
         <div className="content-bx flex flex-col gap-y-8 items-center">
           <h2 className="sub-heading ">Featured Tools Section</h2>
@@ -56,7 +56,7 @@ const FeatureSection = ({data}) => {
         </div>
         <Slider
           slides={cardSlides}
-          slidesPerView={3}
+          slidesPerView={3.1}
           spaceBetween={40}
           speed={1000}
           autoplay={{
@@ -65,16 +65,44 @@ const FeatureSection = ({data}) => {
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
+
+          breakpoints={{
+            320: {
+              slidesPerView: 1.2,
+              spaceBetween: 20,
+
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 30,
+              centeredSlides:false
+            },
+            1024: {
+              slidesPerView: 2.5,
+              spaceBetween: 30,
+              centeredSlides:false
+            },
+            1280: {
+              slidesPerView: 3.1,
+              spaceBetween: 40
+            }
+          }}
           className="w-[89%] mx-auto mt-12 pb-12"
         >
           {data?.data?.map((tool, index) => (
             <SwiperSlide key={index}>
               <CardBox data={tool} />
             </SwiperSlide>
+
           ))}
         </Slider>
       </div>
-    </div>
+    </section>
   );
 };
 
