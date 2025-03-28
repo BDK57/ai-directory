@@ -27,6 +27,7 @@ import { Avatar, AvatarGroup } from "@heroui/avatar";
 import { useTranslation } from "react-i18next";
 import CustomButtonWithIcon from "../button/largeButton";
 import { useNavigate } from "react-router-dom";
+import BaseTab from "../common/base-tab";
 
 const tabs = ["Trending", "Top Discussions", "Latest"];
 const data = {
@@ -132,12 +133,331 @@ const Shades = () => {
   return (
     <>
       <div className="absolute w-[498px] h-[200px] left-1/2 -translate-x-1/2 top-0 bg-[#4A4588] blur-[137px] rounded-full"></div>
-      <div className="absolute w-[710px] h-[60vh] left-[-219px] bottom-0 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px] z-10"></div>
+      <div className="absolute w-[910px] h-[80vh] left-[-219px] bottom-0 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px] z-10"></div>
     </>
   );
 };
 // swiper cards
 
+
+const cateogories = [
+        {
+            "id": 1,
+            "name": "Writing",
+            "name_ar": "كتابة",
+            "slug": "writing",
+            "aitools": [
+                {
+                    "id": 1,
+                    "name": "CHAT GPT",
+                    "name_ar": "أداة الذكاء الاصطناعي 1",
+                    "description": "This is a sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية.",
+                    "image": "documents/ai_tools/1.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool1",
+                    "introductory_des": "Introductory description for AI Tool 1.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 1.",
+                    "educational_link": "https://example.com/tool1/education",
+                    "educational_des": "Educational description for AI Tool 1.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 1.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 1,
+                        "aitool_id": 1
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "Copy.ai",
+                    "name_ar": "أداة الذكاء الاصطناعي 2",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/2.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 1,
+                        "aitool_id": 2
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Gemini",
+                    "name_ar": "أداة الذكاء الاصطناعي 3",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/3.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 1,
+                        "aitool_id": 3
+                    }
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "name": "Traveling",
+            "name_ar": "سفر",
+            "slug": "traveling",
+            "aitools": [
+                {
+                    "id": 2,
+                    "name": "Copy.ai",
+                    "name_ar": "أداة الذكاء الاصطناعي 2",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/2.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 2,
+                        "aitool_id": 2
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Gemini",
+                    "name_ar": "أداة الذكاء الاصطناعي 3",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/3.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 2,
+                        "aitool_id": 3
+                    }
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "name": "Search",
+            "name_ar": "بحث",
+            "slug": "search",
+            "aitools": [
+                {
+                    "id": 1,
+                    "name": "CHAT GPT",
+                    "name_ar": "أداة الذكاء الاصطناعي 1",
+                    "description": "This is a sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية.",
+                    "image": "documents/ai_tools/1.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool1",
+                    "introductory_des": "Introductory description for AI Tool 1.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 1.",
+                    "educational_link": "https://example.com/tool1/education",
+                    "educational_des": "Educational description for AI Tool 1.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 1.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 3,
+                        "aitool_id": 1
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "Copy.ai",
+                    "name_ar": "أداة الذكاء الاصطناعي 2",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/2.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 3,
+                        "aitool_id": 2
+                    }
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "name": "Entertainment",
+            "name_ar": "ترفيه",
+            "slug": "entertainment",
+            "aitools": [
+                {
+                    "id": 1,
+                    "name": "CHAT GPT",
+                    "name_ar": "أداة الذكاء الاصطناعي 1",
+                    "description": "This is a sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية.",
+                    "image": "documents/ai_tools/1.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool1",
+                    "introductory_des": "Introductory description for AI Tool 1.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 1.",
+                    "educational_link": "https://example.com/tool1/education",
+                    "educational_des": "Educational description for AI Tool 1.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 1.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 4,
+                        "aitool_id": 1
+                    }
+                },
+                {
+                    "id": 2,
+                    "name": "Copy.ai",
+                    "name_ar": "أداة الذكاء الاصطناعي 2",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/2.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 4,
+                        "aitool_id": 2
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Gemini",
+                    "name_ar": "أداة الذكاء الاصطناعي 3",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/3.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 4,
+                        "aitool_id": 3
+                    }
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "name": "Programming",
+            "name_ar": "برمجة",
+            "slug": "programming",
+            "aitools": [
+                {
+                    "id": 1,
+                    "name": "CHAT GPT",
+                    "name_ar": "أداة الذكاء الاصطناعي 1",
+                    "description": "This is a sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية.",
+                    "image": "documents/ai_tools/1.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool1",
+                    "introductory_des": "Introductory description for AI Tool 1.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 1.",
+                    "educational_link": "https://example.com/tool1/education",
+                    "educational_des": "Educational description for AI Tool 1.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 1.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 5,
+                        "aitool_id": 1
+                    }
+                },
+                {
+                    "id": 3,
+                    "name": "Gemini",
+                    "name_ar": "أداة الذكاء الاصطناعي 3",
+                    "description": "This is another sample AI tool.",
+                    "description_ar": "هذه أداة ذكاء اصطناعي نموذجية أخرى.",
+                    "image": "documents/ai_tools/3.png",
+                    "bg_image": "documents/ai_tools/bg_img.png",
+                    "introductory_link": "https://example.com/tool2",
+                    "introductory_des": "Introductory description for AI Tool 2.",
+                    "introductory_des_ar": "وصف تمهيدي لأداة الذكاء الاصطناعي 2.",
+                    "educational_link": "https://example.com/tool2/education",
+                    "educational_des": "Educational description for AI Tool 2.",
+                    "educational_des_ar": "وصف تعليمي لأداة الذكاء الاصطناعي 2.",
+                    "is_featured": 1,
+                    "status": 1,
+                    "created_at": "2025-03-22T21:22:29.000000Z",
+                    "updated_at": "2025-03-22T21:22:29.000000Z",
+                    "pivot": {
+                        "category_id": 5,
+                        "aitool_id": 3
+                    }
+                }
+            ]
+        }
+    ]
 const SwiperCards = ({ index, activeIndex }) => {
   return (
     <div
@@ -309,12 +629,31 @@ export default function AISection() {
 
           {/* Main Content */}
 
-          <div className="grid md:grid-cols-4 gap-12 mt-12 relative z-20 ps-16">
-            {/* Sidebar Navigation */}
+          <BaseTab
+          items={cateogories}
+          variant="light"
+          color="primary"
+          radius="lg"
+          size="lg"
+          classNames={{
+            cursor: "bg-[linear-gradient(90deg,#2D2B52_48.79%,rgba(45,43,82,0)_100%)] rounded-[0] bg-[#2D2B5200] text-start text-[background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 91.67%)] ",
+            tab: "data-[selected=true]:bg-[linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%)] data-[selected=true]:text-[24px] text-[20px] text-lg data-[selected=true]:text-primary-white rounded-[0]  w-[500px]  font-montserrat transition-all my-3   mx-3 data-[selected=true]:border-y  data-[selected=true]:border-[1px_0px_1px_0px] data-[selected=true]:border-solid py-6 z-20",
+            tabList: "gap-0 mt-[120px] p-0 -ms-[42px] z-20",
+          }}
+          className={"w-[100%] mx-auto "}
+          onSelectionChange={(key) => console.log("Selected:", key)}
+          isVertical={true}
+          getLeftSpacing={getLeftSpacing}
+          isSwiper={true}
+          background={true}
+        />
+
+          {/* <div className="grid md:grid-cols-4 gap-12 mt-12 relative z-20 ps-16">
+         
             <div className="col-span-1 z-20">
               <ul className="space-y-3 text-lg z-20 mt-16">
                 {menuItems.map((item, index) => {
-                  // Left margin increases as we move down the list
+                  
                   const leftSpacing = index * 8; // Adjust this value for spacing
 
                   return (
@@ -375,7 +714,6 @@ export default function AISection() {
               </ul>
             </div>
 
-            {/* AI Tools Slider */}
             <div className="col-span-3 relative ps-40">
               <Swiper
                 ref={swiperRef}
@@ -403,9 +741,9 @@ export default function AISection() {
                 ))}
               </Swiper>
 
-              {/* Custom Navigation Buttons */}
+            
               <div className="flex justify-between items-center my-6">
-                {/* Custom Pagination */}
+               
                 <div className="flex justify-center  space-x-2">
                   {slides.slice(1).map((_, index) => (
                     <div
@@ -425,7 +763,7 @@ export default function AISection() {
                   ))}
                 </div>
                 <div className=" flex gap-4">
-                  {/* Left Button - Previous Slide */}
+                  
                   <button
                     ref={prevRef}
                     onClick={() => swiperRef.current.swiper.slidePrev()}
@@ -451,7 +789,7 @@ export default function AISection() {
                     </svg>
                   </button>
 
-                  {/* Right Button - Next Slide */}
+                  
                   <button
                     ref={nextRef}
                     onClick={() => swiperRef.current.swiper.slideNext()}
@@ -479,7 +817,7 @@ export default function AISection() {
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
       <div className="bg-primary-black ">
