@@ -20,6 +20,15 @@
   @apply text-primary-navy text-[12px] font-montserrat font-normal leading-[150%] tracking-[-0.01em];
 }
 
+.custom-tabs-border{
+  border-width: 1px, 0px, 1px, 0px;
+
+border-style: solid;
+
+border-image-source: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+
+
+}
 .rtl {
   direction: rtl;
   text-align: right;
