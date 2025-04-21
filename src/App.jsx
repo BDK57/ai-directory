@@ -13,6 +13,8 @@ import DirectoryDetail from "./pages/directory/[id]";
 import LandingPage from "./pages/landingPage";
 import { I18nextProvider } from "react-i18next";
 import i18n from "./i18n";
+import Signup from "./pages/auth/signup";
+import SignIn from "./pages/auth/signin";
 export default function App() {
 
   return (
@@ -20,6 +22,8 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/signin" element={<SignIn />} />
         <Route path="/directory" element={<Directory />} />
         <Route path="/directory/:id" element={<DirectoryDetail  />} />
       </Routes>
