@@ -14,13 +14,13 @@ const Footer = () => {
   return (
     <footer className="bg-primary-black-20 ">
       <div className="container mx-auto relative">
-        <div className="bg-gradient-footer pt-11 pr-[89px] pl-11 pb-11 rounded-2xl shadow-lg absolute -top-32 z-10 w-[96.21%]  left-1/2 -translate-x-1/2">
-          <div className="flex w-full justify-between">
+        <div className="bg-gradient-footer lg:pt-11 lg:pr-[89px] lg:pl-11 lg:pb-11 p-5 rounded-2xl shadow-lg absolute -top-52 md:-top-32 z-10 w-[96.21%]  left-1/2 -translate-x-1/2">
+          <div className="flex flex-col lg:flex-row w-full justify-between gap-5 lg:gap-0">
             <div className="flex flex-col gap-y-3">
               <h1 className="text-white text-4xl leading-10 font-semibold font-clash-display tracking-[-0.01em]">
                 Try Yourdirectory.ai today
               </h1>
-              <p className="text-white text-sm !leading-tight md:text-base w-[70.8%] pr-16">
+              <p className="text-white text-sm !leading-tight md:text-base w-full lg:w-[70.8%] pr-16">
                 Lorem ipsum dolor sit amet consectetur. Id eu ipsum urna sed
                 consectetur aliquam scelerisque. Aliquam mauris ullamcorper sed
                 amet curabitur bibendum eu phasellus ullamcorper.
@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="flex justify-between items-center pt-[134px] pb-14">
+        <div className="flex justify-between lg:items-center pt-[134px] pb-14 flex-col lg:flex-row gap-y-10 lg:gap-y-0 items-start">
           <div className="flex flex-col gap-y-5">
             <img src={logo} alt="logo" className="w-[121px]" />
             <p className="text-primary-white text-[16px] font-normal leading-[27.3px]">
@@ -87,7 +87,7 @@ const Footer = () => {
               </li>
             </ul>
           </div>
-          <div className="flex flex-col md:flex-row justify-around text-white gap-x-16">
+          <div className="flex flex-col md:flex-row justify-around text-white gap-x-16 gap-y-6 lg:gap-y-0">
             <div>
               <h2 className="font-bold mb-3  text-base leading-[18.7px] font-montserrat">
                 USE CASES

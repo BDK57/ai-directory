@@ -46,7 +46,7 @@ const HeroSection = ({data:tools}) => {
             <p className="w-full xl:w-[50%]  font-[400] text-start text-sm xl:text-base  font-montserrat leading-7 tracking-wide text-primary-white-50 mt-7">
             {tools?.data?.aitool?.introductory_des}
             </p>
-            <div className="flex w-full gap-x-3 mt-[22px]">
+            <div className="flex w-full gap-x-3 mt-[22px] flex-wrap lg:flex-nowrap gap-y-4 lg:gap-y-0">
               {tools?.data?.aitool?.categories?.map((category) => (
                 <p key={category} className="bg-pills-color rounded-full px-3 py-2 font-montserrat text-xs flex items-center justify-center h-[30px] ">
                 {category?.name}

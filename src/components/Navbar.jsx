@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import logo from "../assets/logo.svg";
 import { Button } from "@heroui/button";
+import LanguageSwitcher from "./common/languageSwitcher";
 
-const Navbar = () => {
+const Navbar = ({IslandguageSwitcher=false}) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -76,6 +77,8 @@ const Navbar = () => {
             >
               Sign In
             </Button>
+            {IslandguageSwitcher && <LanguageSwitcher /> }
+
           </div>
         </nav>
       </div>
@@ -90,21 +93,21 @@ const Navbar = () => {
             className="text-primary-white text-2xl font-montserrat hover:text-primary-yellow transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Home
+             Chatbot
           </a>
           <a
-            href="/explore"
+            href="/"
             className="text-primary-white text-2xl font-montserrat hover:text-primary-yellow transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            Explore
+             Add a tool
           </a>
           <a
-            href="/about"
+            href="/"
             className="text-primary-white text-2xl font-montserrat hover:text-primary-yellow transition-colors"
             onClick={() => setIsMenuOpen(false)}
           >
-            About
+             Community
           </a>
           {/* Add more menu items as needed */}
         </div>

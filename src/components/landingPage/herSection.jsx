@@ -4,12 +4,12 @@ import BgImage from "../../assets/landingbg.png";
 import Edit from "../../assets/icons/edit-02.png";
 import Header from "../header/header";
 import { useTranslation } from "react-i18next";
-
+import Navbar from "../../components/Navbar";
 const Shades = () => {
   return (
     <>
       <div className="absolute w-[60vw] max-w-[50vw] h-[50vw] max-h-[585px] left-[-10vw] top-[-72px] bg-[#8C292F] blur-[137px] "></div>
-      <div className="absolute left-[520px] top-[-8px] w-[932px] h-[427px] bg-[#4A4588] blur-[137px] "></div>
+      <div className="absolute left-[520px] top-[-8px] w-full lg:w-[932px] lg:h-[427px] bg-[#4A4588] blur-[137px] "></div>
     </>
   );
 };
@@ -34,14 +34,14 @@ const BackgroundImage = () => {
 const LeftSection = ({ t, i18n }) => {
   return (
     <div className="space-y-6 z-20 flex flex-col justify-center">
-      <h1 className="text-[60px] font-clash-display font-semibold  -tracking-[3%] !leading-[80px] mt-[20vh]">
+      <h1 className="font-clash-display font-semibold  text-start text-4xl md:text-5xl lg:text-4xl xl:text-6xl  -tracking-[3%] lg:leading-tight leading-snug ">
         {t("home.title")}
         <br />{" "}
-        <span className="text-primary-yellow text-[80px] font-clash-display font-semibold  tracking-tight">
+        <span className="font-clash-display font-semibold  text-start text-4xl md:text-5xl lg:text-5xl xl:text-[80px]  -tracking-[3%] lg:!leading-[100px] leading-snug  w-full text-primary-yellow">
           {t("home.latestAiTools")}
         </span>
       </h1>
-      <p className="default-paragraph  mt-10 ">{t("home.description")}</p>
+      <p className="w-full  font-[400] text-start text-sm xl:text-base  font-montserrat leading-7 tracking-wide text-primary-white-50 mt-7 lg:mt-0 xl:mt-7 ">{t("home.description")}</p>
       <div className="relative mt-6 w-[80%]">
         <div className="relative p-[3px]  bg-gradient-to-r from-[#8C292F] to-[#4A4588] rounded-xl">
           <input
@@ -73,14 +73,14 @@ const RightSection = () => {
 const HeroSection = () => {
   const { t, i18n } = useTranslation();
   return (
-    <div className="relative min-h-screen overflow-hidden  text-white bg-primary-black ">
+    <div className="relative z-[1] min-h-screen overflow-hidden  text-white bg-primary-black ">
       <BackgroundImage />
       <BordersLines />
       <Shades />
-      <Header />
-
+      {/* <Header /> */}
+      <Navbar IslandguageSwitcher={true} />
       <div
-        className="grid md:grid-cols-2 items-center h-screen mt-40  px-22 relative container border-x border-x-primary-white-20  z-20"
+        className="grid md:grid-cols-2 items-center h-screen   lg:px-22 relative container border-x border-x-primary-white-20  z-20"
         style={{ height: "calc(100vh - 157px)" }}
       >
         {/* Left Side - Text */}
@@ -88,7 +88,7 @@ const HeroSection = () => {
 
         {/* Right Side - Image */}
         <div className="flex justify-center w-full h-full z-20 relative">
-          <div className="absolute bottom-0 h-[78vh]">
+          <div className="lg:absolute lg:bottom-0 lg:h-[78vh]">
             <img
               src={Sheikh}
               alt="AI Guide"

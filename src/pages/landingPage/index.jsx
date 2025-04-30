@@ -12,7 +12,7 @@ const LandingPage = () => {
         <AISection/>
         <AIChatbot/>
         <Articles/>
-        <Footer/>
+        {/* <Footer/> */}
     </div>
   )
 }

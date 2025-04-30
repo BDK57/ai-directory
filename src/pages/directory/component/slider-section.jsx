@@ -55,7 +55,7 @@ const SliderSection = ({ data, title, description, className }) => {
         </div>
         <Slider
           slides={cardSlides}
-          slidesPerView={3}
+         slidesPerView={3.1}
           spaceBetween={40}
           speed={1000}
           autoplay={{
@@ -64,7 +64,34 @@ const SliderSection = ({ data, title, description, className }) => {
             disableOnInteraction: true,
             pauseOnMouseEnter: true,
           }}
-          className="w-[89%] mx-auto mt-12 pb-12"
+
+          breakpoints={{
+            320: {
+              slidesPerView: 1.2,
+              spaceBetween: 20,
+
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 30,
+              centeredSlides:false
+            },
+            1024: {
+              slidesPerView: 2.5,
+              spaceBetween: 30,
+              centeredSlides:false
+            },
+            1280: {
+              slidesPerView: 3.1,
+              spaceBetween: 40
+            }
+          }}
+          className="w-full lg:w-[89%] mx-auto mt-12 pb-12"
         >
           {data?.map((tool, index) => (
             <SwiperSlide key={index}>

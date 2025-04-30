@@ -114,7 +114,7 @@ const menuItems = [
 // logos section ai
 const AiLogos = ({ logos }) => {
   return (
-    <div className="flex justify-between w-full items-center gap-6 mt-8 opacity-80 z-20 ">
+    <div className="flex justify-between w-full items-center gap-6 mt-8 opacity-80 z-20 overflow-auto">
       {logos.map((logo, index) => (
         <img
           key={index}
@@ -132,8 +132,8 @@ const AiLogos = ({ logos }) => {
 const Shades = () => {
   return (
     <>
-      <div className="absolute w-[498px] h-[200px] left-1/2 -translate-x-1/2 top-0 bg-[#4A4588] blur-[137px] rounded-full"></div>
-      <div className="absolute w-[910px] h-[80vh] left-[-219px] bottom-0 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px] z-10"></div>
+      <div className="absolute w-full h-auto lg:w-[498px] lg:h-[200px] left-1/2 -translate-x-1/2 top-0 bg-[#4A4588] blur-[137px] rounded-full"></div>
+      <div className="absolute w-full h-auto lg:w-[710px] lg:h-[60vh] left-[-219px] bottom-0 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px] z-10"></div>
     </>
   );
 };
@@ -588,11 +588,11 @@ export default function AISection() {
   const { t, i18n } = useTranslation();
   return (
     <>
-      <section className="relative bg-primary-black text-white ">
+      <section className="relative bg-primary-black text-white">
         <div className="border absolute border-primary-white-20 right-0 w-full top-0  z-20" />
         <Shades />
 
-        <div className="container border-x border-x-primary-white-20 py-16 ">
+        <div className="container border-x border-x-primary-white-20 py-16 lg:pb-16 pb-20 ">
           {/* Header Section */}
           <div className="text-center z-20 relative">
             <h2 className="sub-heading ">{t("home.aiToolsTitle")}</h2>
@@ -604,7 +604,7 @@ export default function AISection() {
           {/* AI Tool Logos */}
           <AiLogos logos={logos} />
 
-          <div className="text-white mt-16 flex justify-between items-center ">
+          <div className="text-white mt-16 flex flex-col lg:flex-row justify-between items-center ">
             {/* Title */}
             <div className="z-20">
               <h2 className="sub-heading ">Your directory.ai</h2>
@@ -629,6 +629,9 @@ export default function AISection() {
 
           {/* Main Content */}
 
+          <div className="grid grid-cols-4 lg:gap-12 gap-y-8 lg:gap-y-0 mt-12 relative z-20 lg:ps-16">
+            {/* Sidebar Navigation */}
+            <div className="col-span-12 lg:col-span-1 z-20">
           <BaseTab
           items={cateogories}
           variant="light"
@@ -659,7 +662,7 @@ export default function AISection() {
                   return (
                     <li
                       key={index}
-                      className={`transition px-4 py-2  flex items-center gap-4 cursor-pointer font-montserrat
+                      className={`transition px-4 py-2  flex items-center gap-4 cursor-pointer font-montserrat lg:ml-6
               ${
                 index === activeIndextab
                   ? "text-white font-semibold  px-6 border-y border-white-500"
@@ -668,7 +671,7 @@ export default function AISection() {
               ${index !== activeIndextab ? "opacity-70 hover:opacity-100" : ""}
             `}
                       style={{
-                        marginLeft: `${getLeftSpacing(index)}px`,
+                        // marginLeft: `${getLeftSpacing(index)}px`,
                         background:
                           index === activeIndextab
                             ? "linear-gradient(90deg, #2D2B52 48.79%, rgba(45, 43, 82, 0) 100%)"
@@ -714,25 +717,50 @@ export default function AISection() {
               </ul>
             </div>
 
-            <div className="col-span-3 relative ps-40">
+            {/* AI Tools Slider */}
+            <div className="col-span-12 lg:col-span-3 relative lg:ps-40">
               <Swiper
                 ref={swiperRef}
                 modules={[Navigation]}
-                spaceBetween={60}
-                speed={1000}
-                autoplay={{
-                  enabled: false,
-                  delay: 1000,
-                  disableOnInteraction: true,
-                  pauseOnMouseEnter: true,
-                }}
-                slidesPerView={2}
                 onSlideChange={(swiper) => setActiveIndex(swiper.activeIndex)}
                 pagination={false} // Disable default pagination
-                breakpoints={{
-                  640: { slidesPerView: 1 },
-                  1024: { slidesPerView: 2 },
-                }}
+
+         slidesPerView={3.1}
+          spaceBetween={40}
+          speed={1000}
+          autoplay={{
+            enabled: false,
+            delay: 1000,
+            disableOnInteraction: true,
+            pauseOnMouseEnter: true,
+          }}
+
+          breakpoints={{
+            320: {
+              slidesPerView: 1.2,
+              spaceBetween: 20,
+
+            },
+            640: {
+              slidesPerView: 1.5,
+              spaceBetween: 20,
+
+            },
+            768: {
+              slidesPerView: 2.2,
+              spaceBetween: 30,
+              centeredSlides:false
+            },
+            1024: {
+              slidesPerView: 2.5,
+              spaceBetween: 30,
+              centeredSlides:false
+            },
+            1280: {
+              slidesPerView: 3.1,
+              spaceBetween: 40
+            }
+          }}
               >
                 {slides.map((slide, index) => (
                   <SwiperSlide key={index}>
@@ -820,8 +848,8 @@ export default function AISection() {
           </div> */}
         </div>
       </section>
-      <div className="bg-primary-black ">
-        <div className="relative w-full h-screen   w-full ">
+      <div className="bg-primary-black ai-section ">
+        <div className="relative   w-full ">
           <div className="absolute right-0 bottom-0 w-full ">
             <img
               src={communityImage}
@@ -837,12 +865,12 @@ export default function AISection() {
   backgroundRepeat:"no-repeat",
   filter: "grayscale(0.9)"
 }}/> */}
-          <div className="border-x border-x-primary-white-20 container z-20 relative h-screen">
+          <div className="border-x border-x-primary-white-20 container z-20 relative h-full`">
             <div className="w-full  text-white py-10 relative z-20">
               <h1 className="sub-heading ">
                 Yourdirectory.ai <br /> Community
               </h1>
-              <div className="flex justify-between">
+              <div className="flex justify-between flex-col lg:flex-row">
                 <div className="w-[60%] ">
                   <p className="default-paragraph  mt-2">
                     Lorem ipsum dolor sit amet consectetur. Id eu ipsum urna sed
@@ -850,11 +878,11 @@ export default function AISection() {
                   </p>
                 </div>
                 {/* Tabs */}
-                <div className="flex    z-20 cursor-pointer   mt-6 border-b border-gray-700 w-[40%]">
+                <div className="flex    z-20 cursor-pointer   mt-6 border-b border-gray-700 w-full gap-x-7 lg:w-[40%]">
                   {tabs.map((tab) => (
                     <div
                       key={tab}
-                      className={`pb-2 text-xl text-center font-medium font-montserrat  w-full relative ${
+                      className={`pb-2 text-xl text-center font-medium font-montserrat w-max lg:w-full relative ${
                         activeTab === tab ? "text-white" : "text-gray-400"
                       }`}
                       onClick={() => setActiveTab(tab)}
@@ -873,7 +901,7 @@ export default function AISection() {
                 {data[activeTab].map((item, index) => (
                   <div
                     key={index}
-                    className="bg-[#161027] p-4 rounded-xl flex items-center gap-4 w-full border border-[#FFFFFF38]"
+                    className="bg-[#161027] p-4 rounded-xl flex flex-col lg:flex-row items-center gap-4 w-full border border-[#FFFFFF38]"
                   >
                     {/* Image Section */}
                     <div className="w-[188px] h-[188px] rounded-lg overflow-hidden">
@@ -929,7 +957,7 @@ export default function AISection() {
                 ))}
               </div>
             </div>
-            <div className="flex justify-center mt-20 z-20">
+            <div className="pb-8 ">
               <CustomButtonWithIcon text={"Join Our Thriving Community"} />
             </div>
           </div>

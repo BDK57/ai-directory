@@ -26,7 +26,14 @@ export default {
         'primary-purple':'#9747FF',
         'pills-color':'#252343',
         'primary-navy': "#24223A"
+      },
+      screens: {
+        'xs': '320px',
+        'xsm': '375px',
+
+
       }
+
     },
     container: {
       center: true,

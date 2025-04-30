@@ -69,7 +69,7 @@ const HeroSection = () => {
         <img
           src={shadeThree}
           alt=""
-          className="absolute -bottom-1/4 lg:-bottom-1/3 left-1/2 -translate-x-1/2  -z-[2]"
+          className="absolute -bottom-[10%] lg:-bottom-1/3 left-1/2 -translate-x-1/2  -z-[2]"
         />
       </section>
     </>

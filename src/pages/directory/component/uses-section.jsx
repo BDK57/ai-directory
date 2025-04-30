@@ -9,7 +9,7 @@ const UsesSection = ({ data: tools }) => {
       <div className="container border-x border-x-primary-white-20  pt-12 pb-16">
         <div className="content-bx flex flex-col gap-y-8 items-center justify-center">
           <h2 className="sub-heading">Uses</h2>
-          <div className="flex w-full gap-x-[72px] justify-center">
+          <div className="flex w-full gap-x-[72px] justify-center flex-wrap lg:flex-nowrap gap-y-8 lg:gap-y-0">
             <div className="flex flex-col gap-y-2 justify-center items-center">
               <img
                 src={taskOne}
