@@ -11,7 +11,7 @@
 }
 
 .sub-heading {
-  @apply text-primary-white text-[40px] leading-[40px] tracking-[-3] font-clash-display font-semibold;
+  @apply text-primary-white text-2xl sm:text-3xl lg:text-[40px] leading-[40px] tracking-[-3] font-clash-display font-semibold;
 }
 .default-paragraph {
   @apply text-primary-white-50 text-base font-medium font-montserrat font-normal;

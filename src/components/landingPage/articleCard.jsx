@@ -4,8 +4,8 @@ import React from "react";
 
 const ArticleCard = ({ image, title, description }) => {
   return (
-    <div className="flex gap-4 p-4  rounded-lg text-white">
-      <img src={image} alt={title} className="w-40 h-ull rounded-lg object-cover" />
+    <div className="flex gap-4 p-4  rounded-lg text-white flex-col lg:flex-row border border-[#FFFFFF38]">
+      <img src={image} alt={title} className="w-40 h-ull rounded-lg object-cover mx-auto" />
 
       <div className="flex flex-col justify-between">
         <div>
