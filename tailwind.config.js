@@ -29,7 +29,15 @@ export default {
         "primary-purple-shade" : "#4A4588",
         "primary-red" : "#8C292F",
         "bg-dark-purple": "#1C1A32"
+        // 'primary-navy': "#24223A"
+      },
+      screens: {
+        'xs': '320px',
+        'xsm': '375px',
+
+
       }
+
     },
     container: {
       center: true,

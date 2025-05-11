@@ -11,7 +11,10 @@
 }
 
 .sub-heading {
-  @apply text-primary-white text-[40px] leading-[40px] tracking-[-3] font-clash-display font-semibold;
+  @apply text-primary-white text-2xl sm:text-3xl lg:text-[40px] leading-[40px] tracking-[-3] font-clash-display font-semibold;
+}
+.sub-heading-sm {
+  @apply text-primary-white text-xl sm:text-3xl lg:text-[40px] leading-[40px] tracking-[-3] font-clash-display font-semibold;
 }
 .default-paragraph {
   @apply text-primary-white-50 text-base font-medium font-montserrat font-normal;
@@ -19,7 +22,13 @@
 .custom-text-style {
   @apply text-primary-navy text-[12px] font-montserrat font-normal leading-[150%] tracking-[-0.01em];
 }
-
+ /* Button component example (define these classes in your CSS) */
+ .btn-primary {
+   @apply text-white font-montserrat font-medium text-base h-[49px] bg-primary-purple-shade rounded-md px-6;
+ }
+ .btn-secondary {
+   @apply bg-black text-white font-montserrat font-medium text-base border border-white px-4 py-2 rounded-md;
+ }
 .custom-tabs-border{
   border-width: 1px, 0px, 1px, 0px;
 
@@ -143,7 +152,7 @@ border-image-source: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 1
   }
 }
 
-/* footer ,section:not(#hero,.feature-section) {
+/* section:not(#hero,.feature-section,.explore-category) {
   display: none;
 } */
 

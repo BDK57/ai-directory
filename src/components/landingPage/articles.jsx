@@ -37,9 +37,9 @@ const Articles = () => {
     <section className=" bg-primary-black text-white  h-full  relative">
       <div className="container flex flex-col items-center text-center border-x border-x-primary-white-20 py-12">
         <div className="absolute w-[54vw] h-[610px] left-[-219px] -bottom-10 bg-[#4A4588] opacity-60 blur-[107px] backdrop-blur-[22px]"></div>
-        <div className="flex justify-between items-center w-full z-20" >
+        <div className="flex justify-between flex-col lg:flex-row items-start lg:items-center w-full z-20" >
       <div className="  text-left">
-        <h2 className="sub-heading">
+        <h2 className="md:sub-heading sub-heading-sm">
           <span className="">Your</span>directory.ai/
           <span className="text-white">Articles</span>
         </h2>
@@ -53,11 +53,11 @@ const Articles = () => {
         <Button text="Explore More" />
         </div>
       {/* Category Tags */}
-      <div className="mt-8 flex flex-wrap justify-between w-full z-20 ">
+      <div className="mt-8 flex flex-wrap gap-6 lg:gap-0 lg:justify-between w-full z-20 ">
         {categories.map((category, index) => (
           <div
             key={index}
-            className="px-6 py-2 bg-[#4A4588] text-white rounded-lg font-medium  font-montserrat text-[0.9vw]"
+            className="px-6 py-2 bg-[#4A4588] text-white rounded-lg font-medium  font-montserrat text-base lg:text-lg"
           >
             {category}
           </div>

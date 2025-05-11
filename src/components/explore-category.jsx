@@ -94,8 +94,8 @@ const ExploreCategory = () => {
     <section className="explore-category bg-primary-black relative z-[1]">
       <div className="container border-x border-x-primary-white-20  py-12 pb-64 ">
         <div className="content-bx flex flex-col gap-y-8 items-center ">
-          <h2 className="sub-heading ">Explore by Category</h2>
-          <p className="default-paragraph ">
+          <h2 className="sub-heading text-center md:text-start">Explore by Category</h2>
+          <p className="default-paragraph text-center md:text-start">
             Find the right tool for your specific needs.
           </p>
         </div>
@@ -110,8 +110,9 @@ const ExploreCategory = () => {
             cursor: "bg-black",
             tab: "data-[selected=true]:bg-primary-black data-[selected=true]:text-primary-white data-[selected=true]:shadow-[0px_14px_29px_rgba(151,71,255,0.2)] transition-all my-9 mx-3 border border-primary-white-30 rounded-[10px]",
             tabList: "gap-0 ",
+            base:'overflow-auto w-full'
           }}
-          className={"w-[89%] mx-auto"}
+          className={"w-full xl:w-[89%] mx-auto"}
           onSelectionChange={(key) => console.log("Selected:", key)}
         />
          <img

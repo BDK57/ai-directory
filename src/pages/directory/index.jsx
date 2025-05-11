@@ -44,7 +44,7 @@ const Directory = () => {
     <>
 
     <div className="relative z-[1] bg-primary-black">
-    <Navbar />
+    <Navbar IslandguageSwitcher={false} />
     <HeroSection />
     </div>
     <FeatureSection  data={tools}/>

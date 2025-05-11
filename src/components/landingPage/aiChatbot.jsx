@@ -19,7 +19,7 @@ const AIChatbot = () => {
         />
 
         {/* Chat Bubbles */}
-        <div className="absolute top-10 left-[80px] w-[361px] bg-[#2D2B52B2] text-left p-4 rounded-lg border border-[#565569] shadow-md">
+        <div className="hidden lg:flex lg:flex-col absolute top-10 left-[80px] w-[361px] bg-[#2D2B52B2] text-left p-4 rounded-lg border border-[#565569] shadow-md">
         <h3 className="text-[24px] font-[600] font-clash-display leading-[40px] tracking-[0%]">
   Lorem ipsum dolor
 </h3>
@@ -31,7 +31,7 @@ scelerisque.
           </p>
         </div>
 
-        <div className="absolute top-40 right-8 w-[361px] bg-[#2D2B52B2] text-left p-4 rounded-lg border border-[#565569] shadow-md">
+        <div className="hidden lg:flex lg:flex-col absolute top-40 right-8 w-[361px] bg-[#2D2B52B2] text-left p-4 rounded-lg border border-[#565569] shadow-md">
         <h3 className="text-[24px] font-[600] font-clash-display leading-[40px] tracking-[0%]">
   Lorem ipsum dolor
 </h3>
@@ -43,7 +43,7 @@ scelerisque.
           </p>
         </div>
 
-        <div className="absolute bottom-[50px] left-2 w-[361px] bg-[#2D2B52B2] text-left p-4 rounded-lg border border-[#565569] shadow-md">
+        <div className="hidden lg:flex lg:flex-col absolute bottom-[50px] left-2 w-[361px] bg-[#2D2B52B2] text-left p-4 rounded-lg border border-[#565569] shadow-md">
         <h3 className="text-[24px] font-[600] font-clash-display leading-[40px] tracking-[0%]">
   Lorem ipsum dolor
 </h3>

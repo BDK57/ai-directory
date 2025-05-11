@@ -48,8 +48,8 @@ const FeatureSection = ({data}) => {
     <section className="feature-section bg-primary-black bg-fade-gradient ">
       <div className="container border-x border-x-primary-white-20  pt-12 pb-16">
         <div className="content-bx flex flex-col gap-y-8 items-center">
-          <h2 className="sub-heading ">Featured Tools Section</h2>
-          <p className="default-paragraph ">
+          <h2 className="sub-heading text-center md:text-start  ">Featured Tools Section</h2>
+          <p className="default-paragraph text-center  md:text-start ">
             Handpicked tools that are trending and highly rated by our
             community.
           </p>
@@ -92,7 +92,7 @@ const FeatureSection = ({data}) => {
               spaceBetween: 40
             }
           }}
-          className="w-[89%] mx-auto mt-12 pb-12"
+          className="w-full lg:w-[89%] mx-auto mt-12 pb-12"
         >
           {data?.data?.map((tool, index) => (
             <SwiperSlide key={index}>

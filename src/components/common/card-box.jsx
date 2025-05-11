@@ -49,8 +49,8 @@ const CardBox = ({ data, className }) => {
             </svg>
           </div>
         </div>
-        <div className="flex w-full justify-between">
-          <h2 className="text-[#EFEEF6] font-clash-display text-2xl font-semibold mb-2">
+        <div className="flex w-full justify-between items-baseline xsm:items-start">
+          <h2 className="text-[#EFEEF6] font-clash-display xs:text-sm xsm:text-2xl font-semibold mb-2">
             {data?.name || data?.title}
           </h2>
           <div className="bg-[#252343] text-white text-sm font-montserrat font-normal tracking-[-0.01em] px-3 py-[6px] rounded-full inline-block mb-4">
@@ -58,14 +58,14 @@ const CardBox = ({ data, className }) => {
           </div>
         </div>
 
-        <p className="text-[#C0BCDC] mb-4 text-start text-base !leading-relaxed ">
+        <p className="text-[#C0BCDC] mb-4 text-start text-sm xsm:text-base !leading-relaxed ">
           It provides many special services in the field of image generation
           through artificial intelligence, such as converting text into an image
         </p>
         <div className="flex items-center">
           {data?.is_featured == 1  ? <Link
             to={`/directory/${data?.id}`}
-            className="text-primary-white text-base font-montserrat font-medium tracking-[-0.01em] flex items-center underline"
+            className="text-primary-white text-sm xsm:text-base font-montserrat font-medium tracking-[-0.01em] flex items-center underline"
           >
             Learn More <i className="fas fa-arrow-right ml-2"></i>
           </Link> : <p
