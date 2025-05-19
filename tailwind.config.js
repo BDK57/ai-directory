@@ -4,7 +4,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@heroui/theme/dist/components/(accordion|button|input|tabs|divider|ripple|spinner|form).js"
+    "./node_modules/@heroui/theme/dist/components/(accordion|avatar|button|input|modal|select|tabs|divider|ripple|spinner|form|listbox|popover|scroll-shadow).js"
   ],
   theme: {
     extend: {
@@ -25,7 +25,8 @@ export default {
         'primary-yellow': '#FFB414',
         'primary-purple':'#9747FF',
         'pills-color':'#252343',
-        'primary-navy': "#24223A"
+        'primary-navy': "#24223A",
+        'primary-gray': "#4E4D5B"
       },
       screens: {
         'xs': '320px',
